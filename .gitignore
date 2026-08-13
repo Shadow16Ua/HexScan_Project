@@ -1,0 +1,8 @@
+# Visual Studio тимчасові файли
+.vs/
+*.user
+*.suo
+
+# Бінарники та збірки
+bin/
+obj/

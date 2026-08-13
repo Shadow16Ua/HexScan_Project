@@ -1,0 +1,14 @@
+[
+  {
+    "id": "update_v1_1",
+    "title": "New notification feature",
+    "text": "Added a notification system to keep you updated on important events.",
+    "timestamp": "2026-07-22T09:09:47"
+  },
+  {
+    "id": "sys_notice_1",
+    "title": "System Maintenance",
+    "text": "Scheduled maintenance tonight at 02:00 AM.",
+    "timestamp": "2026-07-21T12:00:00"
+  }
+]

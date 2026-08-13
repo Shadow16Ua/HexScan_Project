@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary SEO Metadata -->
+    <title>HexScan — Free Online Virus, Malware & URL Scanner</title>
+    <meta name="title" content="HexScan — Free Online Virus, Malware & URL Scanner">
+    <meta name="description" content="Analyze suspicious files, URLs, and IP addresses securely in real-time with HexScan. Cloud-based malware inspection and cyber threat intelligence.">
+    <meta name="keywords" content="malware scanner, virus check, url scanner, ip locator, cybersecurity tool, file analysis, threat intelligence">
+    <meta name="author" content="HexScan Security">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://hexscan.com/">
+
+    <!-- Theme & Mobile Optimization -->
+    <meta name="theme-color" content="#0f172a">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://hexscan.com/">
+    <meta property="og:title" content="HexScan — Cloud Malware & Threat Analysis">
+    <meta property="og:description" content="Instantly scan files, links, and IP addresses for security threats with advanced cloud analytics.">
+    <meta property="og:image" content="https://hexscan.com/assets/og-image.jpg">
+
+    <!-- Twitter Card -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://hexscan.com/">
+    <meta property="twitter:title" content="HexScan — Cloud Malware & Threat Analysis">
+    <meta property="twitter:description" content="Instantly scan files, links, and IP addresses for security threats with advanced cloud analytics.">
+    <meta property="twitter:image" content="https://hexscan.com/assets/og-image.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+
+    <!-- Performance & Preconnect -->
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+    <!-- External Assets -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"></noscript>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Deferred JS Loading -->
+    <script src="app.js" defer></script>
+
+    <!-- Schema.org JSON-LD (Google Rich Snippets) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "HexScan",
+      "url": "https://hexscan.com",
+      "applicationCategory": "SecurityApplication",
+      "operatingSystem": "All",
+      "description": "Cloud-based malware analysis and network intelligence platform for file, URL, and IP investigation.",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      }
+    }
+    </script>
+</head>
+<body>
+    <header>
+        <nav class="navbar" aria-label="Main Navigation">
+            <a href="#home" class="logo nav-link" data-target="home-view" aria-label="HexScan Homepage">
+                <i class="fa-solid fa-shield-halved" aria-hidden="true"></i> <span>HexScan</span>
+            </a>
+            
+            <div class="nav-right">
+                <ul class="nav-links">
+                    <li><a href="#home" class="nav-link active" data-target="home-view">File Scan</a></li>
+                    <li><a href="#faq" class="nav-link" data-target="faq-view">FAQ</a></li>
+                </ul>
+
+                <a href="https://paypal.me/ViktorProg" target="_blank" rel="noopener noreferrer" class="btn-donate" aria-label="Support the authors via PayPal">
+                    <i class="fa-brands fa-paypal" aria-hidden="true"></i> Support Us
+                </a>
+                
+                <div class="notification-wrapper">
+                    <button id="noti-btn" class="icon-btn" aria-label="Notifications" aria-expanded="false" aria-controls="noti-dropdown">
+                        <i class="fa-regular fa-bell" aria-hidden="true"></i>
+                        <span id="noti-badge" class="badge pulse" aria-hidden="true"></span>
+                    </button>
+                    
+                    <div id="noti-dropdown" class="noti-dropdown hidden" role="region" aria-label="Updates and News">
+                        <div class="noti-header">
+                            <h4>Updates & News</h4>
+                        </div>
+                        <div class="noti-body" id="noti-body" aria-live="polite">
+                            <div style="padding: 1rem; text-align: center; color: #94a3b8;">
+                                <i class="fa-solid fa-spinner spin" aria-hidden="true"></i> Loading...
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        
+        <!-- ================= СТОРІНКА 1: ГОЛОВНА (Сканери) ================= -->
+        <div id="home-view" class="page-view active-page">
+            <section id="scanner" class="tool-section" aria-labelledby="main-heading">
+                <div class="header-text">
+                    <h1 id="main-heading">Analyze Files Securely</h1>
+                    <p>Upload a file to check for malware, viruses, and advanced persistent threats.</p>
+                </div>
+                
+                <div class="upload-area" id="drop-zone" role="region" aria-label="File Drag and Drop Upload Area">
+                    <i class="fa-solid fa-cloud-arrow-up upload-icon" aria-hidden="true"></i>
+                    <h2>Drag & Drop your file here</h2>
+                    <p>or</p>
+                    <input type="file" id="file-input" hidden aria-label="Choose file to scan">
+                    <button type="button" class="btn-primary" onclick="document.getElementById('file-input').click()">Browse Files</button>
+                </div>
+
+                <div id="scan-results" class="results-card hidden" aria-live="polite">
+                    <!-- Dynamic Results JS Injection -->
+                </div>
+            </section>
+
+            <div class="grid-tools">
+                <section id="url-check" class="tool-card" aria-labelledby="url-heading">
+                    <h2 id="url-heading"><i class="fa-solid fa-link" aria-hidden="true"></i> URL Scanner</h2>
+                    <div class="input-group">
+                        <label for="url-input" class="visually-hidden">Enter URL to analyze</label>
+                        <input type="url" id="url-input" placeholder="https://example.com" aria-label="URL to scan">
+                        <button type="button" class="btn-secondary" id="btn-scan-url">Scan</button>
+                    </div>
+                </section>
+
+                <section id="ip-geo" class="tool-card" aria-labelledby="ip-heading">
+                    <h2 id="ip-heading"><i class="fa-solid fa-globe" aria-hidden="true"></i> IP Locator</h2>
+                    <div class="input-group">
+                        <label for="ip-input" class="visually-hidden">Enter IP address</label>
+                        <input type="text" id="ip-input" placeholder="8.8.8.8 (Leave blank for yours)" aria-label="IP Address to locate">
+                        <button type="button" class="btn-secondary" id="btn-locate-ip">Locate</button>
+                    </div>
+                    <div id="ip-result" class="micro-result hidden" aria-live="polite"></div>
+                </section>
+            </div>
+        </div>
+
+        <!-- ================= СТОРІНКА 2: FAQ ================= -->
+        <div id="faq-view" class="page-view">
+            <div class="header-text">
+                <h1>Frequently Asked Questions</h1>
+                <p>Everything you need to know about HexScan's capabilities, privacy, and security.</p>
+            </div>
+
+            <section class="faq-container" aria-label="FAQ Section">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What happens to the files I upload?</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </button>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">
+                            <p>Your privacy is our top priority. Files are uploaded to an isolated sandboxed environment solely for the duration of the scan. Once the analysis is complete, the file is <strong>permanently and securely deleted</strong> from our servers.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is HexScan completely free to use?</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </button>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">
+                            <p>Yes! The web interface for standard file, URL, and IP scanning is completely free for personal use. If you wish to support the project and help us cover server costs, you can use the "Support Us" button in the navigation bar.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you offer an API for developers?</span>
+                        <i class="fa-solid fa-chevron-down icon-arrow"></i>
+                    </button>
+                    <div class="faq-answer-wrapper">
+                        <div class="faq-answer">
+                            <p>We are currently developing a robust RESTful API. Keep an eye on our notification bell for the release announcement!</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+    <footer class="footer" role="contentinfo">
+        <div class="footer-grid">
+            <div class="footer-col">
+                <h3><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> HexScan</h3>
+                <p>Advanced cloud-based malware analysis and network intelligence platform.</p>
+            </div>
+            <div class="footer-col">
+                <h4>Quick Links</h4>
+                <nav aria-label="Footer Quick Links">
+                    <ul>
+                        <li><a href="#faq" class="nav-link" data-target="faq-view">FAQ</a></li>
+                        <li><a href="#api">API Access</a></li>
+                        <li><a href="#privacy">Privacy Policy</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="footer-col">
+                <h4>Contact & Support</h4>
+                <ul>
+                    <li><i class="fa-solid fa-envelope" aria-hidden="true"></i> <a href="mailto:support@HexScan.com" style="color:inherit; text-decoration:none;">support@HexScan.com</a></li>
+                    <li><i class="fa-brands fa-discord" aria-hidden="true"></i> Discord Community</li>
+                    <li><a href="https://paypal.me/ViktorProg" target="_blank" rel="noopener noreferrer">Support the Authors</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 HexScan Security. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
