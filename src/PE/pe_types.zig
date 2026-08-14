@@ -51,6 +51,7 @@ pub const PeInfo = extern struct {
     number_of_sections: u16,
     entry_point: u32,
     sections: [*]SectionInfo,
+    type: FileType,
 
     pub const SectionInfo = extern struct {
         name: [8]u8,
@@ -58,4 +59,9 @@ pub const PeInfo = extern struct {
         raw_size: u32,
         characteristics: u32,
     };
+};
+pub const FileType = enum(c_int) {
+    ELF = 0,
+    PE = 1,
+    Unknown = 2,
 };

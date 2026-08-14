@@ -17,13 +17,20 @@ fn resolveOptions(b: *std.Build) ResolvedOptions {
 pub fn build(b: *std.Build) !void {
     options = resolveOptions(b);
     const opts = options.?;
-
+    const Root = b.addModule("global", .{
+        .root_source_file = b.path("src/root.zig"),
+        .target = opts.target,
+        .optimize = opts.optimize,
+    });
     const Lib = b.addLibrary(.{
         .name = "HexScan_Backend",
-        .root_module = b.addModule("", .{
+        .root_module = b.addModule("main", .{
             .root_source_file = b.path("src/main.zig"),
             .target = opts.target,
             .optimize = opts.optimize,
+            .imports = &.{
+                .{ .name = "global", .module = Root },
+            },
         }),
         .linkage = .static,
     });
